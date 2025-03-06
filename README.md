@@ -1,4 +1,3 @@
-Hyperbolic Safety-Aware Vision-Language Models. CVPR 2025
 <div align="center">
   <h1>Hyperbolic Safety-Aware Vision-Language Models
 
