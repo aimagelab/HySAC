@@ -27,14 +27,27 @@ HySAC, Hyperbolic Safety-Aware CLIP, models hierarchical safety relations to ena
 - [📄 Paper](https://arxiv.org/abs/2503.12127)
 - 🎯 Project Page / Coming soon ...
 
+## Installation
+```
+git clone https://github.com/aimagelab/HySAC.git
+cd HySAC
+conda create -n safe-clip python==3.10
+conda activate safe-clip
+pip install -r requirements.txt
+pip install -e .
+```
+
 ## Usage of HySAC
-See the snippet to use with **HySAC**:
+See the snippet to use **HySAC**:
 
 ```python
 from hysac.models import HySAC
 
 model = HySAC.from_pretrained(repo_id="aimagelab/hysac", device="cuda").to("cuda")
 ```
+
+Use standard methods `encode_image` and `encode_text` to encode images and text with the model.
+Before using the model to retrieve data, you can apply the safety traversal to the query embedding by calling the `traverse_to_safe_image` and `traverse_to_safe_text` methods.
 
 # Citation
 Please cite with the following BibTeX:
