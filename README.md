@@ -43,7 +43,8 @@ See the snippet to use **HySAC**:
 ```python
 from hysac.models import HySAC
 
-model = HySAC.from_pretrained(repo_id="aimagelab/hysac", device="cuda").to("cuda")
+model_id = "aimagelab/hysac"
+model = HySAC.from_pretrained(model_id, device="cuda").to("cuda")
 ```
 
 Use standard methods `encode_image` and `encode_text` to encode images and text with the model.
