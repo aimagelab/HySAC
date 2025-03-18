@@ -15,7 +15,7 @@ from torch.utils.data.distributed import DistributedSampler
 from transformers import CLIPTokenizer, CLIPVisionModelWithProjection, CLIPTextModelWithProjection
 from peft import LoraConfig, get_peft_model
 
-from safeclip.training.dataset.visu import ViSU
+from hysac.dataset.visu import ViSU
 from hysac.losses import LorentzianCLIPContrastive
 from hysac.models import HySAC
 from hysac.utils.argumentparser import parse_arguments

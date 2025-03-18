@@ -9,7 +9,7 @@ from transformers import CLIPTokenizer
 from torch.optim.adamw import AdamW
 from torch.cuda import amp
 
-from safeclip.clip_ft_utils.datasets.caia import CAiA as ViSU
+from hysac.dataset.visu import ViSU
 from hysac.models import HySAC
 from hysac.losses import LorentzianCLIPContrastive, entailmentLoss_A, entailmentLoss_D # these two losses are the same but kept separated for clarity
 from hysac.optim import set_weight_decay_per_param

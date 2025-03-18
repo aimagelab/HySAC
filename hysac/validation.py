@@ -6,8 +6,8 @@ from torch.utils.data import DataLoader
 
 from torch.utils.data.distributed import DistributedSampler
 
-from safeclip.clip_ft_utils.datasets.caia import CAiA as ViSU
-from hysac.evaluation.recall_computation import compute_recall
+from hysac.dataset.visu import ViSU
+from hysac.recall_computation import compute_recall
 from hysac.utils.logger import WandbLogger
 from hysac.models import MERUft
 from hysac.losses import LorentzianCLIPContrastive, entailmentLoss_A, entailmentLoss_B, entailmentLoss_D
@@ -124,7 +124,7 @@ def validate(
             )
 
     print('Computing Recall...')
-    S_V_recall, S_G_recall, U_V_recall, U_G_recall = compute_recall(model, clip_backbone=clip_backbone, batch_size=batch_size, dataset=validation_dataset, debug=debug, mode=mode)
+    S_V_recall, S_G_recall, U_V_recall, U_G_recall = compute_recall(model, clip_backbone=clip_backbone, batch_size=batch_size, dataset=validation_dataset, debug=debug)
     recall_sum = S_V_recall[0][0] + S_V_recall[1][0] + S_G_recall[0][0] + S_G_recall[1][0] + U_V_recall[0][0] + U_V_recall[1][0] # we do not care to evaluate on U_G_recall
 
     if wandb_activated and (run is not None) and rank == 0:
