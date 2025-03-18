@@ -5,7 +5,7 @@
   </h1>  
 </div>
 
-This repository contains the reference code for the paper <b>"Hyperbolic Safety-Aware Vision-Language Models"</b> (arXiv coming soon).<!--[**Hyperbolic Safety-Aware Vision-Language Models**](https://arxiv.org/abs/).-->
+This repository contains the reference code for the paper [**Hyperbolic Safety-Aware Vision-Language Models**](https://arxiv.org/abs/2503.12127).
 
 ***Warning:** This project involves explicit sexual content, racially insensitive language, and other material that may be harmful or disturbing to certain users. Please use this content solely for research purposes and proceed with caution.*
 
