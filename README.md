@@ -13,8 +13,28 @@ This repository contains the reference code for the paper [**Hyperbolic Safety-A
   <img src="imgs/hysac-method.png" alt="HySAC" width="820" />
 </p> 
 
+## Table of Contents
+
+1. [Overview](#overview)
+2. [Usage of Hysac](#usage-of-hysac)
+3. [Citation](#citation)
+
 ## Overview
 HySAC, Hyperbolic Safety-Aware CLIP, models hierarchical safety relations to enable effective retrieval of unsafe content, dynamically redirecting it to **safer** alternatives for enhanced content moderation.
+
+**Useful Links**
+- [🤗 HuggingFace HySAC Model](https://huggingface.co/aimagelab/HySAC)
+- [📄 Paper](https://arxiv.org/abs/2503.12127)
+- 🎯 Project Page / Coming soon ...
+
+## Usage of HySAC
+See the snippet to use with **HySAC**:
+
+```python
+from hysac.models import HySAC
+
+model = HySAC.from_pretrained(repo_id="aimagelab/hysac", device="cuda").to("cuda")
+```
 
 # Citation
 Please cite with the following BibTeX:
