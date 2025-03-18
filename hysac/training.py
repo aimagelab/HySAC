@@ -15,7 +15,7 @@ from hysac.losses import LorentzianCLIPContrastive, entailmentLoss_A, entailment
 from hysac.optim import set_weight_decay_per_param
 from hysac.utils.checkpointing import CheckpointManager
 from hysac.utils.logger import WandbLogger, summarize
-from meru.validation_2d_no_b_DDP import validate
+from hysac.validation import validate
 from hysac.utils.distributed import gather_across_processes
 
 @torch.enable_grad()

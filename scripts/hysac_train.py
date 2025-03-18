@@ -19,7 +19,7 @@ from safeclip.training.dataset.visu import ViSU
 from hysac.losses import LorentzianCLIPContrastive
 from hysac.models import HySAC
 from hysac.utils.argumentparser import parse_arguments
-from meru.train_2d_no_b_DDP import training
+from hysac.training import training
 from hysac.utils.logger import WandbLogger
 
 rank = int(os.environ['RANK'])
