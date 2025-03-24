@@ -19,7 +19,7 @@
   <link rel="icon" href="static/images/unimore_logo.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
@@ -101,12 +101,13 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              We propose HySAC, a hyperbolic safety-aware CLIP model that addresses the retrieval of unsafe content in vision-language systems. Existing unlearning-based techniques
-              remove unsafe knowledge, but lose the ability to distinguish between safe and unsafe content. HySAC introduces a new paradigm by leveraging the hyperbolic space to encode
-              an entailment hierarchy between safe and unsafe content. This enables structured representation, dynamic traversal of queries, and safe content redirection.
+              Addressing the retrieval of unsafe content from vision-language models such as CLIP is an important step towards real-world integration. Current efforts have relied on unlearning techniques that try to erase the model's knowledge of unsafe concepts. While effective in reducing unwanted outputs, unlearning limits the model's capacity to discern between safe and unsafe content. In this work, we introduce a novel approach that shifts from unlearning to an awareness paradigm by leveraging the inherent hierarchical properties of the hyperbolic space.
             </p>
             <p>
-              Experiments show that HySAC outperforms prior work in retrieval, classification, and redirection tasks, establishing a more flexible and interpretable framework for safety in multimodal AI.
+              We propose to encode safe and unsafe content as an entailment hierarchy, where both are placed in different regions of hyperbolic space. Our HySAC, Hyperbolic Safety-Aware CLIP, employs entailment loss functions to model the hierarchical and asymmetrical relations between safe and unsafe image-text pairs. This modelling, ineffective in standard vision-language models due to their reliance on Euclidean embeddings, endows the model with awareness of unsafe content, enabling it to serve as both a multimodal unsafe classifier and a flexible content retriever, with the option to dynamically redirect unsafe queries toward safer alternatives or retain the original output.
+            </p>
+            <p>
+              Extensive experiments show that our approach not only enhances safety recognition but also establishes a more adaptable and interpretable framework for content moderation in vision-language models.
             </p>
           </div>
         </div>
@@ -135,7 +136,7 @@
               forming a safety-aware hierarchy. A traversal mechanism allows redirecting unsafe queries to safe regions without discarding original semantics.
             </p>
             <p>
-              We validate the model using a synthetic and real-world benchmark across retrieval and generation tasks, demonstrating HySAC’s ability to preserve performance
+              We validate the model using a synthetic and real-world benchmark across retrieval and generation tasks, demonstrating HySAC's ability to preserve performance
               while enhancing safety and interpretability.
             </p>
           </div>
@@ -147,15 +148,31 @@
   <section class="hero is-light is-small">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Tasks and Results</h2>
+        <h2 class="title is-3">Embedding Distance Distribution</h2>
         <div class="content has-text-centered">
-          <img src="static/images/first_page.jpg" class="center" width="760">
+          <img src="static/images/chart_distribution_full.png" class="center" width="760">
         </div>
       </div>
     </div>
   </section>
-
+  
   <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              The figure illustrates the distance distribution of embeddings from the origin in the hyperbolic space. Unlike CLIP and Safe-CLIP, which do not separate safe from unsafe data,
+              HySAC yields four distinct clusters corresponding to safe/unsafe and text/image types. This confirms the emergence of a well-structured safety hierarchy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
@@ -171,14 +188,29 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section class="hero is-light is-small">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Qualitative Results</h2>
         <div class="content has-text-centered">
-          <img src="static/images/hysac-qualitative.png" class="center" width="760">
+          <img src="static/images/traversal_qual.png" class="center" width="760">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="content has-text-justified">
+            <p>
+              <b>The figure shows an example of HySAC's ability to dynamically traverse the embedding space. Starting from unsafe queries, the model progressively shifts the retrieved outputs toward safer and semantically consistent results.
+              This illustrates HySAC's capacity to balance safety and relevance through geometry-aware retrieval.
+            </p>
+          </div>
         </div>
       </div>
     </div>
