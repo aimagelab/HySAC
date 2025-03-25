@@ -108,6 +108,7 @@
           <i><b>Warning:</b> This project involves explicit sexual content, racially insensitive language, 
             and other material that may be harmful or disturbing to certain users. 
             Please use this content solely for research purposes and proceed with caution.</i>
+
         </h2>
       </div>
     </div>
@@ -223,10 +224,16 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Qualitative Results</h2>
         <div class="content has-text-centered">
-          <img src="static/images/qual_unsafe_supp.png" class="center" width="800">
+          <div class="container">
+            <figure>
+              <img src="static/images/qual_unsafe_supp.png" class="center" width="760">
+              <figcaption>Image-to-Text safety traversal results. HySAC traverses towards the root feature, retrieving the top-1 text at each interpolation point.</figcaption>
+            </figure>
+          <figure>
+            <img src="static/images/qual_unsafe_i2i_supp.png" class="center" width="760">
+            <figcaption>Image-to-Image traversals from unsafe image queries towards safe images.</figcaption>
+          </figure>
         </div>
-        <div class="content has-text-centered">
-          <img src="static/images/qual_unsafe_i2i_supp.png" class="center" width="800">
         </div>
       </div>
     </div>
@@ -238,7 +245,7 @@
         <div class="column is-four-fifths">
           <div class="content has-text-justified">
             <p>
-              The figure shows an example of HySAC's ability to dynamically traverse the embedding space. Starting from unsafe queries, the model progressively shifts the retrieved outputs toward safer and semantically consistent results.
+              The figures shows an example of HySAC's ability to dynamically traverse the embedding space. Starting from unsafe queries, the model progressively shifts the retrieved outputs toward safer and semantically consistent results.
               This illustrates HySAC's capacity to balance safety and relevance through geometry-aware retrieval.
             </p>
           </div>
