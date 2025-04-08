@@ -25,7 +25,7 @@ HySAC, Hyperbolic Safety-Aware CLIP, models hierarchical safety relations to ena
 **Useful Links**
 - [🤗 HuggingFace HySAC Model](https://huggingface.co/aimagelab/HySAC)
 - [📄 Paper](https://arxiv.org/abs/2503.12127)
-- 🎯 Project Page / Coming soon ...
+- [🎯 Project Page](https://aimagelab.github.io/HySAC/)
 
 ## Installation
 ```
